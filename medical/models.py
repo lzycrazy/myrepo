@@ -71,12 +71,12 @@ class Appointment(models.Model):
     
     def save(self):
         account_sid = 'ACfe07ad62de81bed49dde1d651f2c294d'
-        auth_token  =  'c5421e0904871faae8e46856ce1d36af'
+        auth_token  =  '4a21559ce5e6682aa6c16a40dee17884'
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
                      body=f"Patient name - {self.name} and mobile Number {self.phone} appointment with Dr. {self.doctor_name}",
-                     from_='+19033212013',
+                     from_='+18305327027',
                      to='+919811005027'
                  )
 
