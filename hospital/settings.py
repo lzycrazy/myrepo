@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-vrj1kfi*7pawo_jyxv%ggfr-!#4l!u2dfs#_0d18u=ud1y+r=7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['64.227.174.108']
+ALLOWED_HOSTS = ['64.227.174.108', 'www.arsimedicalcentre.com','arsimedicalcentre.com']
 
 
 # Application definition
