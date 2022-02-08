@@ -65,13 +65,13 @@ def appointment(request):
         name=request.POST['name']
         email=request.POST['email']
         phone=request.POST['phone']
-        department=request.POST['department']
+#         department=request.POST['department']
         doctor_name=request.POST['doctor_name']
         date=request.POST['date']
         msg=request.POST['msg']
         
         
-        appointment=Appointment(name=name,email=email,phone=phone,department=department,doctor_name=doctor_name,date=date,msg=msg)
+        appointment=Appointment(name=name,email=email,phone=phone,doctor_name=doctor_name,date=date,msg=msg)
         
         
         subject=name
