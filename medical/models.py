@@ -75,7 +75,7 @@ class Appointment(models.Model):
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
-                     body=f"Patient name - {self.name} and mobile Number {self.phone} appointment with Dr. {self.doctor_name}",
+                     body=f"{name} looking for {department} Choosing appointment with {doctor_name} patient mobile number is {phone}",
                      from_='+18305327027',
                      to='+919811005027'
                  )
