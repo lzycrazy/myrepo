@@ -76,15 +76,15 @@ def appointment(request):
         messages.info(request,"Book Appointment Successfully")
         return redirect('/')
         
-        # subject=name
-        # message=msg
-        # email_from=settings.EMAIL_HOST_USER
-        # try:
-        #     send_mail(subject,message,email_from ,['poojachauhan2102@gmail.com'])
+        subject=name
+        message=msg
+        email_from=settings.EMAIL_HOST_USER
+        try:
+            send_mail(subject,message,email_from ,['poojachauhan2102@gmail.com'])
            
         
-        # except Exception as e:
-        #     return redirect("appointment")
+        except Exception as e:
+            return redirect("appointment")
     return render(request,'appointment.html',context)
 
 def gallery(request):
