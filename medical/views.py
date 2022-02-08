@@ -77,7 +77,7 @@ def appointment(request):
         return redirect('/')
         
         subject=name
-        message=msg
+        message=f"{name} looking for {department} Choosing appointment with {doctor_name} patient mobile number is {phone}   ",
         email_from=settings.EMAIL_HOST_USER
         try:
             send_mail(subject,message,email_from ,['poojachauhan2102@gmail.com'])
