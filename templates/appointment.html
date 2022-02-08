@@ -1,0 +1,114 @@
+
+{%extends 'base.html' %}
+{%block body%}
+
+
+
+    <div class="breadcrumbs overlay">
+        <div class="container" style="height: 100px;">
+            <div class="row align-items-center">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                    <div class="breadcrumbs-content" >
+                        <h1 class="page-title" style="text-align: center;margin: -100px;" >Appointment</h1>
+                    </div>
+                    <ul class="breadcrumb-nav">
+                        <li><a href="/">Home</a></li>
+                        <li>appointment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="appointment page section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+
+                    <div class="appointment-form">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="appointment-title">
+                                    <h2>Book An Appointment</h2>
+                                    <p>Please feel welcome to contact our friendly reception staff with any general or
+                                        medical
+                                        enquiry. Our doctors will receive or return any urgent calls.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="{% url 'appointment' %}" method="post">{% csrf_token %}
+                        <div class="row">
+                            
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="name"><i class="lni lni-user"></i></label>
+                                    <input type="text" name="name" id="name" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="email"><i class="lni lni-envelope"></i></label>
+                                    <input type="email" name="email" id="email" placeholder="Your Email">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="number"><i class="lni lni-phone-set"></i></label>
+                                    <input type="text" name="phone" id="number" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="department"><i class="lni lni-notepad"></i></label>
+                                    <select name="department" id="department">
+                                        <option value="none" selected disabled>Department</option>
+                                        {%for i in department%}
+                                        <option value="Gynacologist">{{i.name}}</option>
+
+                                        {%endfor%}
+                                        <!-- <option value="Cardiologist">Cardiologist</option> -->
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="doctor"><i class="lni lni-sthethoscope"></i></label>
+                                    <select name="doctor_name" id="doctor">
+                                        <option value="none" selected disabled>Doctor</option>
+                                        {%for i in team%}
+                                        <option value="Felica Queen">{{i.name}}</option>
+                                       {%endfor%}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-input">
+                                    <label for="date"><i class="lni lni-user"></i></label>
+                                    <input type="date" name="date" id="date">
+                                </div>
+                            </div>
+                            <div class="col-12 p-0">
+                                <div class="appointment-input">
+                                    <textarea name="msg" placeholder="Write Your Message Here....."></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 p-0">
+                                <div class="appointment-btn button">
+                                    <button type="submit" class="btn">Get Appointment</button>
+                                </div>
+                            </div>
+
+                           
+                        </div>
+                    </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {%endblock%}

@@ -1,0 +1,148 @@
+{%extends 'base.html' %}
+{%block body%}
+
+
+<div class="breadcrumbs overlay">
+    <div class="container" style="height: 100px;">
+        <div class="row align-items-center" >
+            <div class="col-lg-8 offset-lg-2 col-md-12 col-12">
+                <div class="breadcrumbs-content" >
+                    <h1 class="page-title" style="text-align: center;margin: -100px;" >Gallery</h1>
+                </div>
+                <ul class="breadcrumb-nav">
+                    <li><a href="/">Home</a></li>
+                    <li>Gallery</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- doctors section -->
+<section class="doctors section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h3>Gallery</h3>
+                    <h2 class="wow fadeInUp" data-wow-delay=".4s">
+                        Gallery
+                    </h2>
+
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {%for i in team%}
+            <div class="col-lg-3 col-md-6 col-12">
+
+                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                    <div class="image">
+                        <a ><img src="/media/{{i.image}}" style="height: 300px; width:300px;" alt="#"></a>
+                       
+                    </div>
+
+                   
+                   
+                </div>
+
+            </div>
+            {%endfor%}
+
+
+          
+        </div>
+    </div>
+</section>
+<!-- End doctors section -->
+
+
+
+
+<!-- gallery section -->
+<section class="doctors section">
+    <div class="container">
+
+        <div class="row">
+            {%for i in gallery%}
+            <div class="col-lg-3 col-md-6 col-12">
+
+                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                    <div class="image">
+                        <a ><img src="/media/{{i.image}}" style="height: 300px; width:300px;" alt="#"></a>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            {%endfor%}
+         
+        </div>
+    </div>
+</section>
+
+
+<!-- End gallery section -->
+
+<!-- doctors section -->
+<section class="doctors section">
+    <div class="container">
+
+        <div class="row">
+            {%for i in department%}
+            <div class="col-lg-3 col-md-6 col-12">
+
+                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                    <div class="image">
+                        <a ><img src="/media/{{i.image}}" style="height: 300px; width:300px;" alt="#"></a>
+                        
+                    </div>
+
+                   
+                    
+                   
+                </div>
+
+            </div>
+            {%endfor%}
+         
+        </div>
+    </div>
+</section>
+<!-- End doctors section -->
+
+<section class="doctors section">
+    <div class="container">
+
+        <div class="row">
+           
+            <div class="col-lg-6 col-md-6 col-12">
+
+                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                    <div class="image">
+                        <a ><img src="/static/assets/images/bed3.jpg" style="height: 300px; width:1000px;" alt="#"></a>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+           
+            <div class="col-lg-6 col-md-6 col-12">
+
+                <div class="single-doctor wow fadeInUp" data-wow-delay=".2s">
+                    <div class="image">
+                        <a ><img src="/static/assets/images/gall.jpg" style="height: 300px; width:1000px;" alt="#"></a>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}
