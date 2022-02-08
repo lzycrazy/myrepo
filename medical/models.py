@@ -2,6 +2,7 @@ from email.policy import default
 from enum import unique
 from django.db import models
 from autoslug import AutoSlugField
+from twilio.rest import Client
 
 
 # Create your models here.
@@ -67,6 +68,21 @@ class Appointment(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def save(self):
+        account_sid = 'ACe70edc7fd6da1ba9b583c697b861025a'
+        auth_token = 'aaa9e7cbcb27879cdd42d89371dcf0e1'
+        client = Client(account_sid, auth_token)
+
+        message = client.messages.create(
+                     body=f"Patient name - {self.name} and mobile Number {self.phone} appointment with Dr. {self.doctor_name}",
+                     from_='+19033212013',
+                     to='+917983767041'
+                 )
+
+        # print(message.sid)
+
+        return super().save()
 
 class Carrier(models.Model):
     carrier=models.CharField(max_length=200)
