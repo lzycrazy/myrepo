@@ -65,26 +65,26 @@ def appointment(request):
         name=request.POST['name']
         email=request.POST['email']
         phone=request.POST['phone']
-#         department=request.POST['department']
+        department=request.POST['department']
         doctor_name=request.POST['doctor_name']
         date=request.POST['date']
         msg=request.POST['msg']
         
         
-        appointment=Appointment(name=name,email=email,phone=phone,doctor_name=doctor_name,date=date,msg=msg)
+        appointment=Appointment(name=name,email=email,phone=phone,department=department,doctor_name=doctor_name,date=date,msg=msg)
+        appointment.save()
+        messages.info(request,"Book Appointment Successfully")
+        return redirect('/')
         
+        # subject=name
+        # message=msg
+        # email_from=settings.EMAIL_HOST_USER
+        # try:
+        #     send_mail(subject,message,email_from ,['poojachauhan2102@gmail.com'])
+           
         
-        subject=name
-        message=msg
-        email_from=settings.EMAIL_HOST_USER
-        try:
-            send_mail(subject,message,email_from ,['poojachauhan2102@gmail.com'])
-            appointment.save()
-            messages.info(request,"Book Appointment Successfully")
-            return redirect('/')
-        
-        except Exception as e:
-            return redirect("appointment")
+        # except Exception as e:
+        #     return redirect("appointment")
     return render(request,'appointment.html',context)
 
 def gallery(request):
