@@ -142,20 +142,18 @@
                                         <a href="{% url 'doctor' %}"><b>Doctors</b></a>
 
                                     </li>
-                                    <li class="nav-item">
+                                     <li class="nav-item">
+                                        <a class="page-scroll dd-menu
+                                                collapsed" href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><b>Department</b></a>
+                                        <ul class="sub-menu collapse" id="submenu-1-2">
 
-                                        <a ><b>Department</b></a>
-                                        <ul class="sub-menu collapse">
                                             {%for i in department%}
                                             <li class="nav-item">
-
-                                                <a href="/department/{{i.slug}}"><b>
-                                                       {{i.name}}</b></a>
+                                                <a href="/department/{{i.slug}}">{{i.name}}</a>
                                             </li>
                                             {%endfor%}
-
+                                       
                                         </ul>
-
                                     </li>
 
 
