@@ -206,6 +206,7 @@ def post(request,slug):
 def department(request,slug):
     department=Departmentt.objects.all()
     team=Team.objects.all
+    departments=Departmentt.objects.filter(slug=slug)
     
     context={
         
