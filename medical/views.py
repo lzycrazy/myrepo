@@ -146,11 +146,12 @@ def carrier(request):
 
 def doctor_details(request,slug):
     department=Departmentt.objects.all()
-    
+    teams=Team.objects.all
     
     team=Team.objects.filter(slug=slug)
     context={
         'team':team,
+        'teams':teams
         'department':department,
     }
     return render(request,'doctor_detail.html',context)
