@@ -14,7 +14,7 @@ def index(request):
     cara=Caraousel.objects.all
     feedback=Feedback.objects.all
     department=Departmentt.objects.all()
-    team=Team.objects.order_by('-slug')[0:7]
+    team=Team.objects.order_by('-slug')[0:4]
     post=Post.objects.order_by('-date')[0:3]
     gallery=gallary.objects.order_by('name')[0:4]
     
@@ -205,12 +205,14 @@ def post(request,slug):
 
 def department(request,slug):
     department=Departmentt.objects.all()
+    team=Team.objects.all()
     departments=Departmentt.objects.filter(slug=slug)
     
     context={
         
         'departments':departments,
         'department':department,
+        'team':team
     }
     return render(request,'department.html',context)
 
