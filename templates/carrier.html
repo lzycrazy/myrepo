@@ -38,15 +38,16 @@
                         <form action="/carrier" method="post">{% csrf_token %}
                         <div class="row">
                             
-							<div class="col-lg-6 col-md-6 col-12 p-0">
+				 
+				<div class="col-lg-6 col-md-6 col-12 p-0">
                                 <div class="appointment-input">
                                     <label for="carrier"><i class="lni lni-user"></i></label>
                                     <select name="carrier" id="carrier">
                                         <option value="none" selected disabled>Choose an Carrier</option>
-                                        <option value="it">IT</option>
-                                        <option value="hr">HR</option>
-										<option value="business">Business</option>
-										<option value="consult">Consult</option>
+                                        {%for i in department%}
+                                        <option value="{{i.name}}">{{i.name}}</option>
+                                        {%endfor%}
+                                        
                                         
                                     </select>
                                 </div>
